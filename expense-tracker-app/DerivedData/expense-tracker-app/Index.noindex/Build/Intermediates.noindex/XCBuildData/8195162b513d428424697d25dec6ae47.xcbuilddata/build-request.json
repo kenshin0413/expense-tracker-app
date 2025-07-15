@@ -1,0 +1,48 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "c62f9ba60490a1c084a550808ace0bb8748505e0e6d6beed66362fbcceeffd75"
+    }
+  ],
+  "containerPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/expense-tracker-app.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Build/Products",
+      "pchPath" : "/Users/kenshin/Desktop/expense-tracker-app/expense-tracker-app/DerivedData/expense-tracker-app/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

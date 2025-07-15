@@ -1,0 +1,23 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8429FF34C858923D28A15B93C26C75E9C181F919",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8429FF34C858923D28A15B93C26C75E9C181F919" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "053B43D1-DE4A-43A9-A2B2-7D153F0538AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8429FF34C858923D28A15B93C26C75E9C181F919" : "expense-tracker-app\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "expense-tracker-app",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "expense-tracker-app\/expense-tracker-app.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git@github.com:kenshin0413\/expense-tracker-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8429FF34C858923D28A15B93C26C75E9C181F919"
+    }
+  ]
+}

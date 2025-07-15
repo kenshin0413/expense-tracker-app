@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'expense-tracker-app' in project 'expense-tracker-app' (no dependencies)
