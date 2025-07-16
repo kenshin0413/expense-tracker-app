@@ -19,6 +19,17 @@ struct ContentView: View {
     }
 }
 
+struct Expense {
+    var id: UUID
+    var amount: Double
+    var category: String
+    var date: Date
+}
+
+class ExpenseViewModel: ObservableObject {
+    @Published var Expense: String = ""
+}
+
 #Preview {
     ContentView()
 }
