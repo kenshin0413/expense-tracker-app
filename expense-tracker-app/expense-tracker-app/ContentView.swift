@@ -32,7 +32,7 @@ struct Expense: Identifiable {
 }
 
 class ExpenseViewModel: ObservableObject {
-    @Published var expenses: [Expense] = []
+    @Published var expense: [Expense] = []
 }
 
 #Preview {
