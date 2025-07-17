@@ -18,11 +18,12 @@ struct ContentView: View {
         .padding()
     }
 }
+
 enum ExpenseType {
-    case income,expense
+    case income, expense
 }
 
-struct Expense {
+struct Expense: Identifiable {
     var id: UUID
     var amount: Double
     var category: String
