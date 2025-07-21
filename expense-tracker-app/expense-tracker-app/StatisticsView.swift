@@ -9,7 +9,12 @@ import SwiftUI
 
 struct StatisticsView: View {
     var body: some View {
-        Text("統計")
+        NavigationStack {
+            VStack {
+                Text("統計画面")
+            }
+            .navigationTitle("統計画面")
+        }
     }
 }
 

@@ -9,7 +9,12 @@ import SwiftUI
 
 struct ListView: View {
     var body: some View {
-        Text("一覧")
+        NavigationStack {
+            List {
+                Text("一覧画面")
+            }
+            .navigationTitle("一覧画面")
+        }
     }
 }
 
