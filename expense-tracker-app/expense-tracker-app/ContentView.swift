@@ -19,15 +19,20 @@ struct ContentView: View {
     }
 }
 
-struct Expense {
+enum ExpenseType {
+    case income, expense
+}
+
+struct Expense: Identifiable {
     var id: UUID
     var amount: Double
     var category: String
     var date: Date
+    var type: ExpenseType
 }
 
 class ExpenseViewModel: ObservableObject {
-    @Published var Expense: String = ""
+    @Published var expense: [Expense] = []
 }
 
 #Preview {

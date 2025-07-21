@@ -9,7 +9,12 @@ import SwiftUI
 
 struct InputView: View {
     var body: some View {
-        Text("入力")
+        NavigationStack {
+            Form {
+                Text("収支入力画面")
+            }
+            .navigationTitle("収支入力画面")
+        }
     }
 }
 
