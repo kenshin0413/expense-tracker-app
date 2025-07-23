@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct InputView: View {
-    enum ExpenseType: String, CaseIterable {
-        case income = "収入"
-        case expense = "支出"
-    }
+    
     enum IncomeCategory: String, CaseIterable {
         case pay = "給与"
         case subjob = "副業"
         case investment = "投資"
         case other = "その他"
     }
+    
     enum ExpenseCategory: String, CaseIterable {
         case food = "食費"
         case travel = "交通費"
@@ -26,11 +24,14 @@ struct InputView: View {
         case medical = "医療費"
         case other = "その他"
     }
+    
+    @StateObject private var viewModel = ExpenseViewModel()
     @State private var expenseType: ExpenseType = .expense
     @State private var amount: String = ""
-    @State private var selectIncomeCategory: IncomeCategory = .pay
-    @State private var selectExpenseCategory: ExpenseCategory = .food
+    @State private var selectIncomeCategory: IncomeCategory? = nil
+    @State private var selectExpenseCategory: ExpenseCategory? = nil
     @State private var date: Date = Date()
+    @State private var showAlert = false
     var body: some View {
         NavigationStack {
             Form {
@@ -52,14 +53,14 @@ struct InputView: View {
                     if expenseType == .income {
                         Picker("カテゴリ", selection: $selectIncomeCategory) {
                             ForEach(IncomeCategory.allCases, id: \.self) { type in
-                                Text(type.rawValue)
+                                Text(type.rawValue).tag(type as IncomeCategory?)
                             }
                         }
                         .pickerStyle(.menu)
                     } else {
                         Picker("カテゴリ", selection: $selectExpenseCategory) {
                             ForEach(ExpenseCategory.allCases, id: \.self) { type in
-                                Text(type.rawValue)
+                                Text(type.rawValue).tag(type as ExpenseCategory?)
                             }
                         }
                         .pickerStyle(.menu)
@@ -72,15 +73,34 @@ struct InputView: View {
                 }
                 
                 Section {
-                    Button {
-                        
-                    } label: {
-                        Text("保存")
+                    Button("保存") {
+                        let doubleAmount = Double(amount) ?? 0
+                        viewModel.addExpense(
+                            amount: doubleAmount,
+                            type: expenseType == .income ? .income : .expense,
+                            incomeCategory: selectIncomeCategory?.rawValue,
+                            expenseCategory: selectExpenseCategory?.rawValue,
+                            date: date
+                        )
+                        amount = ""
+                        showAlert = true
                     }
-
+                    .disabled(
+                        //文字列を数値に変換 失敗したら0にする
+                        Double(amount) ?? 0 <= 0 ||
+                        //収入が選ばれていて、かつ収入カテゴリが選択されていない または
+                        (expenseType == .income && selectIncomeCategory == nil) ||
+                        //支出が選ばれていて、かつ支出カテゴリが選択されていない
+                        (expenseType == .expense && selectExpenseCategory == nil)
+                    )
                 }
             }
             .navigationTitle("収支入力画面")
+        }
+        .alert("通知", isPresented: $showAlert) {
+            
+        } message: {
+            Text("保存しました")
         }
     }
 }
