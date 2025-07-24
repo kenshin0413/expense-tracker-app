@@ -8,23 +8,6 @@
 import SwiftUI
 
 struct InputView: View {
-    
-    enum IncomeCategory: String, CaseIterable {
-        case pay = "給与"
-        case subjob = "副業"
-        case investment = "投資"
-        case other = "その他"
-    }
-    
-    enum ExpenseCategory: String, CaseIterable {
-        case food = "食費"
-        case travel = "交通費"
-        case amusement = "娯楽"
-        case lightheat = "光熱費"
-        case medical = "医療費"
-        case other = "その他"
-    }
-    
     @StateObject private var viewModel = ExpenseViewModel()
     @State private var expenseType: ExpenseType = .expense
     @State private var amount: String = ""
@@ -78,8 +61,8 @@ struct InputView: View {
                         viewModel.addExpense(
                             amount: doubleAmount,
                             type: expenseType == .income ? .income : .expense,
-                            incomeCategory: selectIncomeCategory?.rawValue,
-                            expenseCategory: selectExpenseCategory?.rawValue,
+                            incomeCategory: selectIncomeCategory,
+                            expenseCategory: selectExpenseCategory,
                             date: date
                         )
                         amount = ""
