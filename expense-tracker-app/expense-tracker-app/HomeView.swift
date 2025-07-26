@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var viewModel = ExpenseViewModel()
     @State var selection = 1
     var body: some View {
         TabView(selection: $selection) {
-            InputView()
+            InputView(viewModel: viewModel)
                 .tabItem {
                     Label("入力", systemImage: "plus.circle")
                 }
                 .tag(1)
 
-            ListView()
+            ListView(viewModel: viewModel)
                 .tabItem {
                     Label("一覧", systemImage: "list.bullet")
                 }

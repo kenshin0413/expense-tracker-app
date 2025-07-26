@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputView: View {
-    @StateObject private var viewModel = ExpenseViewModel()
+    @ObservedObject var viewModel: ExpenseViewModel
     @State private var expenseType: ExpenseType = .expense
     @State private var amount: String = ""
     @State private var selectIncomeCategory: IncomeCategory? = nil
@@ -89,6 +89,6 @@ struct InputView: View {
 }
 
 #Preview {
-    InputView()
+    InputView(viewModel: ExpenseViewModel())
 }
 
