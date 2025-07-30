@@ -22,12 +22,8 @@ struct ListView: View {
                     LabeledContent {
                         Text("¥\(Int(expense.amount))")
                     } label: {
-                        HStack {
-                            Image(systemName: expense.type == .income ? "plus.circle.fill" : "minus.circle.fill")
-                                .foregroundColor(expense.type == .income ? .green : .red)
-                            Text(categoryText(for: expense))
-                                .foregroundColor(.primary)
-                        }
+                        Label("\(categoryText(for: expense))", systemImage: expense.type == .income ? "plus.circle.fill" : "minus.circle.fill")
+                            .foregroundColor(expense.type == .income ? .green : .red)
                     }
                 }
                 .navigationTitle("一覧画面")
